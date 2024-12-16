@@ -5,15 +5,15 @@
 
 ## Inference 
 
-#### 1. OneFormer
+### 1. OneFormer
    ✨To apply segmentation with Oneformer, just run:
    ``` 
    python segmentation.py -v
    ``` 
-   You will then see a comparison of the before and after segmentation results, which are saved in the `./outputs` directory by default. To modify the default settings, you can refer to the help information by running `python segmentation.py --help`.
+   You will then see a comparison of the before and after segmentation results, which are saved in the `./outputs` directory by default. To modify the default settings, you can refer to the help information by running `python segmentation.py --help`.  
     Note: We use the checkpoint [shi-labs/oneformer_coco_swin_large](https://huggingface.co/shi-labs/oneformer_coco_swin_large).  
      
-#### 2. Salient Human Segmentation  
+### 2. Salient Human Segmentation  
    Since OneFormer does not have the capability to segment only people in the foreground, nor does it function like SAM2, which can perform segmentation with the aid of hints such as boxes, scribbles, or points, we instead leverage a salient human detection model to achieve this. 
    The model we use for inference is [U^2-Net](https://huggingface.co/shi-labs/oneformer_coco_swin_large). 
 
@@ -21,8 +21,7 @@
 >   **(2021-Feb-06)** Recently, some people asked the problem of using U<sup>2</sup>-Net for human segmentation, so we trained another example model for human segemntation based on [**Supervisely Person Dataset**](https://supervise.ly/explore/projects/supervisely-person-dataset-23304/datasets). <br/>
 (1) To run the human segmentation model, please first downlowd the [**u2net_human_seg.pth**](https://drive.google.com/file/d/1m_Kgs91b21gayc2XLW0ou8yugAIadWVP/view?usp=sharing) model weights into ``` ./saved_models/u2net_human_seg/```. <br/>
 (2) Prepare the to-be-segmented images into the corresponding directory, e.g. ```./test_data/test_human_images/```. <br/>
-(3) Run the inference by command: ```python u2net_human_seg_test.py``` and the results will be output into the corresponding dirctory, e.g. ```./test_data/u2net_test_human_images_results/```<br/><br/>
-  
+(3) Run the inference by command: ```python u2net_human_seg_test.py``` and the results will be output into the corresponding dirctory, e.g. ```./test_data/u2net_test_human_images_results/```<br/>
 
    So, the generated masks will be placed in directory `./U-2-Net/test_data/u2net_test_human_images_results` by default.  
   
