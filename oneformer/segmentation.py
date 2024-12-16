@@ -73,9 +73,9 @@ if __name__=='__main__':
 
     parser = argparse.ArgumentParser()
     parser.add_argument("-m", "--masking", action="store_true", help='whether to get masking (mask other people in the image)')
-    parser.add_argument("-v", "--visualize", action="store_true", default='True', help='visualization of predicted_map')
+    parser.add_argument("-v", "--visualize", action="store_true", help='visualization of predicted_map')
     parser.add_argument("-d", "--data_dir", default='./images', type=str, help="path of directory of OCHuman image dataset")
-    parser.add_argument("-g", "--seg_dir", default='./images', type=str, help="path of directory of images you want to segment")
+    parser.add_argument("-g", "--seg_dir", default='./images', type=str, help="path of directory of images you want to segment (by defualt, same as --data_dir)")
     parser.add_argument("-s", "--save_dir", default='./outputs', type=str, help="path of directory for saving predicted_map")
     args = parser.parse_args()
 
