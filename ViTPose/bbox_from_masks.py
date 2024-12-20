@@ -41,20 +41,10 @@ def process_single_image_masks(mask_dir, output_json_path):
 
     ref_img = cv2.imread(mask_paths[0])
     height, width, _ = ref_img.shape
-    mixed_mask = np.zeros((height, width, 3), dtype=np.uint8)
 
-    bg_masks = []
     for mask_path in mask_paths:
         input_mask = cv2.imread(mask_path)
-        bg_masks.append(255 - input_mask)
-        mixed_mask = cv2.add(mixed_mask, 255 - input_mask)
-
-    mixed_mask = 255 - mixed_mask
-
-    bboxes = []
-    for bg_mask in bg_masks:
-        bg_mask = 255 - (mixed_mask + bg_mask)
-        bbox = mask_to_bbox(bg_mask)
+        bbox = mask_to_bbox(input_mask)
         if bbox is None:
             bbox = [0, 0, width, height]  # Default to whole image if no bbox
         bboxes.append(bbox)
