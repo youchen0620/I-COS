@@ -7,6 +7,7 @@ pip install -e .
 pip install -e ".[notebooks]"
 cd ../checkpoints && download_ckpts.sh
 cd ..
+pip install ultralytics
 ```
 
 ## Generate Masks
