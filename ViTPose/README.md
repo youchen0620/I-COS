@@ -54,7 +54,7 @@ python pose_estimation.py \
 - --checkpoint_file: Path to the checkpoint file for the pre-trained ViTPose model.
 
 #### Notes
-- We use the configuration file [ViTPose_base_coco_256x192.py](https://github.com/ViTAE-Transformer/ViTPose/blob/main/configs/body/2d_kpt_sview_rgb_img/topdown_heatmap/coco/ViTPose_base_coco_256x192.py) from the ViTPose repository.
+- Files in the `ViTPose/mmpose_configs` directory are directly moved from the [ViTPose repository](https://github.com/ViTAE-Transformer/ViTPose) for reference and proper use.
 - The checkpoint file used is [ViTPose-B](https://onedrive.live.com/?authkey=%21AMGk2fMQhRTN0o4&id=E534267B85818129%2125500&cid=E534267B85818129&parId=root&parQt=sharedby&o=OneUp).
 
 
